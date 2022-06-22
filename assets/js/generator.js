@@ -124,3 +124,39 @@ function preCache(assetsArray, pagesArray) {
 
     return data
 }
+
+
+function respectNetwork(respect) {
+    let data = ""
+    data += `
+
+    let CACHE_ASSETS = [] // The Assets that will be cached in the Install Event
+    
+    `
+
+    if(!respect) {
+        data += `
+        
+    CACHE_ASSETS = [...AUTO_CACHE, ...PRE_CACHE, ...DEFAULT_AVATAR]
+        
+        `
+
+        return data
+    }
+
+    data += `
+    // Respects the User's Connection Status
+    // The assets will not be pre-cached if the user is not on a stable 4g or faster connection
+    let connection =
+        navigator.connection ||
+        navigator.mozConnection ||
+        navigator.webkitConnection
+    if (connection != undefined) {
+        let slow = ["2g", "slow-2g", "3g"]
+        if (slow.includes(connection.effectiveType)) CACHE_ASSETS = [...AUTO_CACHE]
+        else CACHE_ASSETS = [...AUTO_CACHE, ...PRE_CACHE, ...DEFAULT_AVATAR]
+    } else CACHE_ASSETS = [...AUTO_CACHE, ...PRE_CACHE, ...DEFAULT_AVATAR]
+    `
+
+    return data
+}
