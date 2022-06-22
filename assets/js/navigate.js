@@ -80,9 +80,10 @@ secondPrevButton.addEventListener("click", () => navigate(2))
 secondNextButton.addEventListener("click", () => navigate(3))
 thirdPrevButton.addEventListener("click", () => navigate(3))
 thirdNextButton.addEventListener("click", () => navigate(4))
-finishButton.addEventListener("click", () => navigate(5))
 
 firstProgress.addEventListener("click", () => navigate(1))
 secondProgress.addEventListener("click", () => navigate(2))
 thirdProgress.addEventListener("click", () => navigate(3))
 fourthProgress.addEventListener("click", () => navigate(4))
+
+// finishButton.addEventListener("click", () => navigate(5))
