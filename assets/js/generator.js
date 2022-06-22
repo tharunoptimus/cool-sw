@@ -444,3 +444,53 @@ function fetchEventEnd() {
     })
     `
 }
+
+
+function backgroundSync() {
+    return `
+    
+    // ---------------------------------------- BACKGROUND SYNC ----------------------------------------
+    /* Steps to Perform Background Sync
+        1. Setup a tag name for a single task
+        2. Register the task with the set up tag name
+        3. Listen for the 'sync' event
+        4. If the event.tag matches your set up tag run a function
+    */
+
+    // A Simple Tag Name for a single Background Sync Task
+    // You can add multiple tags and call the requestBackgroundSync Function to register all
+    let backgroundSyncTagName = 'test-tag-from-devtools'
+
+    // Registering the Background Sync Task with the Tag Name
+    requestBackgroundSync(backgroundSyncTagName)
+
+    // Function to register a Background Sync
+    // Provide a tag name to register
+    async function requestBackgroundSync(backgroundSyncTagName) {
+        try {
+            await self.registration.sync.register(backgroundSyncTagName)
+        } catch (error) {
+            console.log("Unable to REGISTER background sync", error)
+            setTimeout(() => requestBackgroundSync(backgroundSyncTagName), 10000)
+        }
+    }
+
+    // This is the SYNC Event Listener - Background Sync
+    // The event has a tagname with which you can run different functions
+    self.addEventListener('sync', event => {
+        if (event.tag === backgroundSyncTagName) {
+            console.log("Executing Background Sync of tagname: " + event.tag)
+            event.waitUntil(backgroundStuff()) // Actually Executing backgroundStuff function
+        }
+    })
+
+    function backgroundStuff() {
+        // This function will be executed when the browser sends a sync event
+        console.log("Background stuff")
+    }
+
+    // ---------------------------------------- --------------- ----------------------------------------
+
+    
+    `
+}
