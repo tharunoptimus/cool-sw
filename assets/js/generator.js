@@ -634,41 +634,41 @@ function backgroundFetch() {
 }
 
 
-let options = {
-    swName: "sw",
-    useScripts: false,
-    cacheName: "content-v1",
-    imageStuff: {
-        cdn: [
+// let options = {
+//     swName: "sw",
+//     useScripts: false,
+//     cacheName: "content-v1",
+//     imageStuff: {
+//         cdn: [
             
-        ],
-        fallback: ""
-    },
-    cdnStuff: {
-        cdn: [
-            ""
-        ]
-    },
-    preCache: {
-        assetsArray: [
-            ""
-        ],
-        pagesArray: [
-           ""
-        ]
-    },
-    respectNetwork: true,
-    cacheStrategy: {
-        cdn: "cacheFirst",
-        local: "cacheFirst"
-    },
-    technologies: {
-        backgroundSync: false,
-        periodicSync: false,
-        push: false,
-        backgroundFetch: false
-    }
-}
+//         ],
+//         fallback: ""
+//     },
+//     cdnStuff: {
+//         cdn: [
+//             ""
+//         ]
+//     },
+//     preCache: {
+//         assetsArray: [
+//             ""
+//         ],
+//         pagesArray: [
+//            ""
+//         ]
+//     },
+//     respectNetwork: true,
+//     cacheStrategy: {
+//         cdn: "cacheFirst",
+//         local: "cacheFirst"
+//     },
+//     technologies: {
+//         backgroundSync: false,
+//         periodicSync: false,
+//         push: false,
+//         backgroundFetch: false
+//     }
+// }
 
 function generate(options) {
     let data = ""
