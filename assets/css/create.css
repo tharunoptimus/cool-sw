@@ -115,7 +115,7 @@ body {
 }
 
 .progressActive {
-    color: #007bff;
+    color: #0070f3;
 }
 
 .progressActive::before {
@@ -208,10 +208,23 @@ body {
     transform: scale(1.5);
 }
 
+
 .newInput .radioInput label, .newInput .checkInput label {
     font-size: 1.2rem;
     outline: 0;
     color: black;
+}
+
+@media screen and (max-width: 480px) {
+    .newInput .radioInput input[type="radio"], .newInput .checkInput input[type="checkbox"] {
+        -ms-transform: scale(2); /* IE 9 */
+        -webkit-transform: scale(2); /* Chrome, Safari, Opera */
+        transform: scale(2);
+    }
+
+    .newInput .radioInput label, .newInput .checkInput label {
+        padding-left: 0.5rem;
+    }
 }
 
 .navigationButtonsContainer {
@@ -264,6 +277,7 @@ body {
 .valuesContainer span.value {
     display: flex;
     align-items: center;
+    padding: 0.4rem 0.1rem;
 }
 
 .valuesContainer span.value input[type="text"] {
@@ -302,4 +316,9 @@ body {
 
 .addMoreValues img {
     padding-right: 0.5rem;
+    pointer-events: none;
+}
+
+.addMoreValues span {
+    pointer-events: none;
 }
