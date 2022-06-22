@@ -1,7 +1,7 @@
 :root {
 	--maxWidth: 800px;
 	--minWidth: 500px;
-	--minHeight: 70vh;
+	--minHeight: 20vh;
 	--lightBlack: #44444444;
 }
 
@@ -123,14 +123,14 @@ body {
     box-shadow: 6px 4px 4px 0px #44444444;
 }
 
-.newInput .radioInput input[type="radio"] {
+.newInput .radioInput input[type="radio"], .newInput .checkInput input[type="checkbox"] {
     margin-bottom: 0.5rem;
     -ms-transform: scale(1.5); /* IE 9 */
     -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
     transform: scale(1.5);
 }
 
-.newInput .radioInput label {
+.newInput .radioInput label, .newInput .checkInput label {
     font-size: 1.2rem;
     outline: 0;
     color: black;
@@ -143,7 +143,7 @@ body {
     justify-content: space-between;
 }
 
-.nextSection, .prevSection {
+.nextSection, .prevSection, .finishSection {
     cursor: pointer;
     color: white;
     background-color: #0070f3;
@@ -155,6 +155,7 @@ body {
 }
 
 .nextSection:hover, .nextSection:focus,
+.finishSection:hover, .finishSection:focus,
 .prevSection:hover, .prevSection:focus {
     background-color: #0066db;
     transform: scale(1.05);
@@ -166,9 +167,19 @@ body {
     border: 1px solid #ba000d;
 }
 
+.finishSection {
+    background-color: #255d00;
+    border: 1px solid #255d00;
+}
+
 .prevSection:hover, .prevSection:focus {
     background-color: #b2102f;
 }
+
+.finishSection:hover, .finishSection:focus {
+    background-color: hsl(96, 100%, 15%);
+}
+
 
 
 
@@ -210,7 +221,6 @@ body {
     transition: all 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
 
 }
-
 
 .addMoreValues img {
     padding-right: 0.5rem;
