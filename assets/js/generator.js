@@ -55,3 +55,27 @@ function imageStuff(cdnArray, fallback) {
 
     return data
 }
+
+
+function cdnStuff(cdnArray) {
+    let data = ""
+    data += `
+    const CDNS = "cdn-cache" // Name of the CDN Cache
+    `
+    if(cdnArray.length != 0) {
+    data += `// The links of the CDN URLs to Cache
+    const CDN_CACHE_URLS = [
+    
+        `
+
+    cdnArray.forEach(element => {
+        data += `"${element}",
+        `
+    });
+
+    data += `
+    ]
+    `
+    }
+    return data
+}
