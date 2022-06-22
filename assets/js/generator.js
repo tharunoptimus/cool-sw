@@ -550,3 +550,29 @@ function periodicBackSync() {
     
     `
 }
+
+
+function push() {
+    return `
+    
+        
+    // --------------------------------------- Browser Push Event --------------------------------------
+    /* Steps to Setup Browser Push
+        1. Listen for the 'push' event
+        2. If there is 'event', a push message has been sent
+        3. 'event.data' will have the data associated with the Push Event - read only
+        4. 'event.data.json()' will return the encoded information
+        5. 'event.data.text()' will just return the tag name from dev tools 
+            - Works only with Dev Tools - Haven't tested out yet
+    */
+    self.addEventListener("push", event => {
+        if (event.data) {
+            let tagName = event.data.text()
+            console.log("Received push message with tag " + tagName)
+        }
+    })
+
+    // ------------------------------------ ------------------------ -----------------------------------
+    
+    `
+}
