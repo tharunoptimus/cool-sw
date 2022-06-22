@@ -3,9 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/create.css">
     <title>Create New Service Worker</title>
 </head>
 <body>
-    
+    <div class="wrapper">
+
+        <span class="title">Generate Service Worker</span>
+
+        <div class="formContainer">
+            <div class="firstPanel showPanel">
+                <span class="panelTitle">General Configuration 🤹‍♂️</span>
+                <div class="questionContainer">
+
+                    <div class="newInput">
+                        <span>What do you want to name your new service worker?</span>
+                        <input type="text" id="serviceWorkerName" class="inputForm" aria-label="Name of your Service Worker" required placeholder="Name of your new service worker">
+                    </div>
+                    
+                    <div class="newInput">
+                        <span>What do you want the name of the cache to be?</span>
+                        <input type="text" id="cacheName" class="inputForm" aria-label="Name of your cache" required placeholder="Name of your cache">
+                    </div>
+                   
+                    <div class="newInput">
+                        <span>Do you have an offline.html page?</span>
+                        <div class="radioInput">
+                            <input type="radio" name="offlinePage" id="yesOffline" class="inputForm" aria-label="I have an offline.html page" required>
+                            <label for="yesOffline">Yes, I have one! 😆</label>
+                        </div>
+
+                        <div class="radioInput">
+                            <input type="radio" name="offlinePage" id="noOffline" class="inputForm" aria-label="I don't have an offline.html page" required>
+                            <label for="noOffline">No, I don't! 😢</label>
+                        </div>
+
+                        <span class="subResponse"></span>
+
+                    </div>
+                   
+                    <div class="newInput">
+                        <span>Would you want to use some of the functions from your script files?</span>
+                        <div class="radioInput">
+                            <input type="radio" name="importScripts" id="needScript" class="inputForm" aria-label="I have an offline.html page" required>
+                            <label for="needScript">Yes, I want to use it! 😆</label>
+                        </div>
+
+                        <div class="radioInput">
+                            <input type="radio" name="importScripts" id="noScript" class="inputForm" aria-label="I don't have an offline.html page" required>
+                            <label for="noScript">No, I don't want to! 🙂</label>
+                        </div>
+
+                    </div>
+
+                    <div class="navigationButtonsContainer">
+                        <br />
+                        <button class="nextSection" id="firstNextButton" type="button" aria-label="Next Section">Next</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="secondPanel">
+                <div class="firstPanel">
+                    <span class="panelTitle">General Configuration</span>
+                </div>
+            </div>
+            <div class="thirdPanel">
+                <div class="firstPanel">
+                    <span class="panelTitle">General Configuration</span>
+                </div>
+            </div>
+            <div class="fourthPanel">
+                <div class="firstPanel">
+                    <span class="panelTitle">General Configuration</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/js/create.js"></script>
 </body>
 </html>
