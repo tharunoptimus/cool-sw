@@ -10,8 +10,9 @@ document.addEventListener("click", (e) => {
         e.stopPropagation()
     } else if(target.classList.contains("addMoreValues")) {
         let html = renderMoreInput()
-        let valuesContainer = target.parentElement.querySelector(".valuesContainer")
-        valuesContainer.innerHTML += html
+        html = new DOMParser().parseFromString(html, 'text/html')
+        html = html.querySelector("span.value")
+        target.parentElement.querySelector(".valuesContainer").append(html)
         e.stopPropagation()
     } else if(target.id == "yesOffline" || target.id == "noOffline") {
         target.parentElement.parentElement.querySelector(".subResponse").innerText = target.getAttribute("data-id")
