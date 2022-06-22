@@ -63,7 +63,7 @@
 
                 </div>
             </div>
-            <div class="secondPanel showPanel">
+            <div class="secondPanel">
                 <span class="panelTitle">Caching Strategy 🧠💪 (Pre Cache)</span>
 
                 <div class="questionContainer">
@@ -121,8 +121,91 @@
                     </div>
                 </div>
             </div>
-            <div class="thirdPanel">
-                <span class="panelTitle">General Configuration</span>
+            <div class="thirdPanel showPanel">
+                <span class="panelTitle">Life Cycle 🧬</span>
+                <div class="questionContainer">
+                    <div class="newInput">
+                        <span>Do you use any CDNs?</span>
+                        <span class="subResponse"> If so, do you want to cache them as well? If yes, add the links to the cdns.</span>
+                        <span class="subResponse"> Just enter the hostnames of the CDNs. For Eg: If it's jQueryV3.6.0 from Google, just `ajax.googleapis.com` is enough</span>
+    
+                        <div class="valuesContainer">
+                            <span class="value">
+                                <input type="text" aria-label="Asset Link" placeholder="cdn.jsdelivr.net">
+                                <img src="/assets/images/delete.svg" height="40" width="40" alt="Delete Entry">
+                            </span>
+                        </div>
+    
+                        <div class="addMoreValues">
+                            <img src="/assets/images/add.svg" alt="Add New Entry" height="25" width="25">
+                            <span>Add New Entry</span>
+                        </div>
+                    </div>
+                    
+                    <div class="newInput">
+                        <span>Do you use an Image Network like 8biticon or face.co?</span>
+                        <span class="subResponse">If yes, add the links to the Image CDNS.</span>
+    
+                        <div class="valuesContainer">
+                            <span class="value">
+                                <input type="text" aria-label="Asset Link" placeholder="avatars.dicebear.com">
+                                <img src="/assets/images/delete.svg" height="40" width="40" alt="Delete Entry">
+                            </span>
+                        </div>
+    
+                        <div class="addMoreValues">
+                            <img src="/assets/images/add.svg" alt="Add New Entry" height="25" width="25">
+                            <span>Add New Entry</span>
+                        </div>
+
+                        <br/>
+                        <span class="subResponse">Enter the link for a fallback Image. This image will be used if the service worker encounters troubles while fetching the real images</span>
+                        <input type="text" class="inputForm" aria-label="Link to the Fallback Image" required placeholder="/assets/images/profile.png">
+
+                    </div>
+
+                    <div class="newInput">
+                        <span>Choose the Delivery Strategy of the Fetch Event: <br> Cache Only and Network Only stuff don't work good in my experience. So you get only 2 options. 😈</span>
+                    </div>
+
+
+                    <div class="newInput">
+                        <span>Delivery Strategy of your web app files - local</span>
+                        <div class="radioInput">
+                            <input type="radio" name="localDelivery" id="cacheFirstLocal" class="inputForm" aria-label="I have an offline.html page" required>
+                            <label for="cacheFirstLocal">Cache First Falling back to Network Strategy 💪</label>
+                        </div>
+
+                        <div class="radioInput">
+                            <input type="radio" name="localDelivery" id="networkFirstLocal" class="inputForm" aria-label="I don't have an offline.html page" required>
+                            <label for="networkFirstLocal">Network First Falling back to Cache Strategy 🧠</label>
+                        </div>
+
+                    </div>
+                   
+                    <div class="newInput">
+                        <span>Delivery Strategy of your Image network and CDNs</span>
+                        <div class="radioInput">
+                            <input type="radio" name="cdnDelivery" id="cacheFirstCDN" class="inputForm" aria-label="I have an offline.html page" required>
+                            <label for="cacheFirstCDN">Cache First Falling back to Network Strategy 💪</label>
+                        </div>
+
+                        <div class="radioInput">
+                            <input type="radio" name="cdnDelivery" id="networkFirstCDN" class="inputForm" aria-label="I don't have an offline.html page" required>
+                            <label for="networkFirstCDN">Network First Falling back to Cache Strategy 🧠</label>
+                        </div>
+
+                    </div>
+
+
+                    
+    
+                    <div class="navigationButtonsContainer">
+                        <button class="prevSection" id="secondPrevButton" type="button" aria-label="Previous Section">Back</button>
+                        <button class="nextSection" id="thirdNextButton" type="button" aria-label="Next Section">Next</button>
+                    </div>
+                </div>
+
             </div>
             <div class="fourthPanel">
                 <span class="panelTitle">General Configuration</span>
