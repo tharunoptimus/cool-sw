@@ -96,7 +96,7 @@ body {
     flex-direction: column;
 }
 
-.newInput span:nth-child(1) {
+.newInput > span {
     padding: 0.8em 0.1em;
     font-size: 1.2rem;
     color: #3d3d3ddb;
@@ -137,13 +137,13 @@ body {
 }
 
 .navigationButtonsContainer {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.nextSection {
+.nextSection, .prevSection {
     cursor: pointer;
     color: white;
     background-color: #0070f3;
@@ -154,8 +154,64 @@ body {
     text-align: center;
 }
 
-.nextSection:hover, .nextSection:focus {
+.nextSection:hover, .nextSection:focus,
+.prevSection:hover, .prevSection:focus {
     background-color: #0066db;
     transform: scale(1.05);
     transition: all 0.2s linear;
+}
+
+.prevSection {
+    background-color: #ba000d;
+    border: 1px solid #ba000d;
+}
+
+.prevSection:hover, .prevSection:focus {
+    background-color: #b2102f;
+}
+
+
+
+.valuesContainer span.value {
+    display: flex;
+    align-items: center;
+}
+
+.valuesContainer span.value input[type="text"] {
+    width: 80%;
+}
+
+.valuesContainer span.value img {
+    padding-left: 0.5rem;
+    cursor: pointer;
+}
+
+.valuesContainer span.value img:hover {
+    transform: scale(1.05);
+    transition: all 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.addMoreValues {
+    display: flex;
+    align-items: center;
+    padding: 0.3em 0.5em;
+    border: 1px solid var(--lightBlack);
+    border-radius: 6px;
+    background-color: #44444415;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.addMoreValues:hover, .addMoreValues:focus {
+    transform: scale(1.05);
+    transition: all 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+
+
+.addMoreValues img {
+    padding-right: 0.5rem;
 }

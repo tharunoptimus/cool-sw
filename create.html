@@ -12,7 +12,7 @@
         <span class="title">Generate Service Worker</span>
 
         <div class="formContainer">
-            <div class="firstPanel showPanel">
+            <div class="firstPanel">
                 <span class="panelTitle">General Configuration 🤹‍♂️</span>
                 <div class="questionContainer">
 
@@ -45,12 +45,12 @@
                     <div class="newInput">
                         <span>Would you want to use some of the functions from your script files?</span>
                         <div class="radioInput">
-                            <input type="radio" name="importScripts" id="needScript" class="inputForm" aria-label="I have an offline.html page" required>
+                            <input type="radio" name="importScripts" id="needScript" class="inputForm" aria-label="Yes, I want to use it! 😆" required>
                             <label for="needScript">Yes, I want to use it! 😆</label>
                         </div>
 
                         <div class="radioInput">
-                            <input type="radio" name="importScripts" id="noScript" class="inputForm" aria-label="I don't have an offline.html page" required>
+                            <input type="radio" name="importScripts" id="noScript" class="inputForm" aria-label="No, I don't want to! 🙂" required>
                             <label for="noScript">No, I don't want to! 🙂</label>
                         </div>
 
@@ -63,20 +63,69 @@
 
                 </div>
             </div>
-            <div class="secondPanel">
-                <div class="firstPanel">
-                    <span class="panelTitle">General Configuration</span>
+            <div class="secondPanel showPanel">
+                <span class="panelTitle">Caching Strategy 🧠💪 (Pre Cache)</span>
+
+                <div class="questionContainer">
+                    <div class="newInput">
+                        <span>Do you want to respect your user's network connection when pre-caching?</span>
+                        <div class="radioInput">
+                            <input type="radio" name="respectNetwork" id="respectUser" class="inputForm" aria-label="Yes, I want to respect user's network connection 😇" required>
+                            <label for="respectUser">Yes, I want to respect user's network connection 😇</label>
+                        </div>
+
+                        <div class="radioInput">
+                            <input type="radio" name="respectNetwork" id="dontRespect" class="inputForm" aria-label="Nah, who cares? 🥱" required>
+                            <label for="dontRespect">Nah, who cares? 🥱</label>
+                        </div>
+
+                    </div>
+
+                    <div class="newInput">
+                        <span>Enter the Assets 📦 to Pre-Cache</span>
+                        <span class="subResponse">Enter the absolute links to the assets you want to pre-cache (relative to the root of your site)</span>
+
+                        <div class="valuesContainer">
+                            <span class="value">
+                                <input type="text" aria-label="Asset Link" placeholder="/assets/css/main.css">
+                                <img src="/assets/images/delete.svg" height="40" width="40" alt="Delete Entry">
+                            </span>
+                        </div>
+
+                        <div class="addMoreValues">
+                            <img src="/assets/images/add.svg" alt="Add New Entry" height="25" width="25">
+                            <span>Add New Entry</span>
+                        </div>
+                    </div>
+                    
+                    <div class="newInput">
+                        <span>Enter the Pages 📄 to Pre-Cache</span>
+                        <span class="subResponse">Enter the absolute links to the pages you want to pre-cache (relative to the root of your site)</span>
+
+                        <div class="valuesContainer">
+                            <span class="value">
+                                <input type="text" aria-label="Asset Link" placeholder="/blog">
+                                <img src="/assets/images/delete.svg" height="40" width="40" alt="Delete Entry">
+                            </span>
+                        </div>
+
+                        <div class="addMoreValues">
+                            <img src="/assets/images/add.svg" alt="Add New Entry" height="25" width="25">
+                            <span>Add New Entry</span>
+                        </div>
+                    </div>
+
+                    <div class="navigationButtonsContainer">
+                        <button class="prevSection" id="firstPrevButton" type="button" aria-label="Previous Section">Back</button>
+                        <button class="nextSection" id="secondNextButton" type="button" aria-label="Next Section">Next</button>
+                    </div>
                 </div>
             </div>
             <div class="thirdPanel">
-                <div class="firstPanel">
-                    <span class="panelTitle">General Configuration</span>
-                </div>
+                <span class="panelTitle">General Configuration</span>
             </div>
             <div class="fourthPanel">
-                <div class="firstPanel">
-                    <span class="panelTitle">General Configuration</span>
-                </div>
+                <span class="panelTitle">General Configuration</span>
             </div>
         </div>
     </div>
