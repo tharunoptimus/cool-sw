@@ -26,3 +26,19 @@ function renderMoreInput() {
         <img class="deleteIcon" src="/assets/images/delete.svg" height="40" width="40" alt="Delete Entry">
     </span>`
 }
+
+
+function getArrayValues(element) {
+    let cdnClass = element
+    let spans = cdnClass.querySelectorAll("span.value")
+    let array = []
+    spans.forEach(span => {
+        let data = span.children[0].value
+        if(data == "" || data == null) return
+        array.push(data.trim())
+    })
+
+    return array
+}
+
+
