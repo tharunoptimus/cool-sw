@@ -686,3 +686,55 @@ let options = {
         backgroundFetch: false
     }
 }
+
+
+function generate(options) {
+    let data = ""
+
+    if(options.useScripts) {
+        data += useScripts()
+    }
+
+    data += generalStuff(options.cacheName)
+
+    data += imageStuff(options.imageStuff.cdn, options.imageStuff.fallback)
+
+    data += cdnStuff(options.cdnStuff.cdn)
+
+    data += autoCache()
+
+    data += preCache(options.preCache.assetsArray, options.preCache.pagesArray)
+
+    data += respectNetwork(options.respectNetwork)
+
+    data += installAndActivate()
+
+    data += fetchEventStart()
+
+    if(options.cacheStrategy.cdn == "cacheFirst") {
+        data += cacheFirstImage(options.imageStuff.cdn, options.cdnStuff.cdn)
+    } else if(options.cacheStrategy.cdn == "networkFirst") {
+        data += networkFirstImage(options.imageStuff.cdn, options.cdnStuff.cdn)
+    }
+
+    data += otherRequests()
+   
+    if(options.cacheStrategy.local == "cacheFirst") {
+        data += cacheFirstLocal()
+    } else if(options.cacheStrategy.local == "networkFirst") {
+        data += networkFirstLocal()
+    }
+
+    data += fetchEventEnd()
+
+    if(options.technologies.backgroundSync) data += backgroundSync()
+    
+    if(options.technologies.periodicSync) data += periodicBackSync()
+    
+    if(options.technologies.push) data += push()
+    
+    if(options.technologies.backgroundFetch) data += backgroundFetch()
+
+    return data
+
+}
