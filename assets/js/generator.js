@@ -382,3 +382,33 @@ function otherRequests() {
         
     `
 }
+
+
+function networkFirstLocal() {
+    return `
+        // Network First Falling Back to Cache Strategy for Local Assets
+        event.respondWith(
+                
+            fetch(event.request)
+            .then((response) => {
+                caches.open(CACHE).then((cache) => {
+                    cache.put(event.request, response)
+                })
+                return response.clone()
+            })
+            .catch((_err) => {
+                return caches.match(event.request).then((cachedResponse) => {
+                    if (cachedResponse) {
+                        return cachedResponse
+                    }
+
+                    return caches.open(CACHE).then((cache) => {
+                        const offlineRequest = new Request(OFFLINE)
+                        return cache.match(offlineRequest)
+                    })
+                })
+            })
+            
+        )
+    `
+}
