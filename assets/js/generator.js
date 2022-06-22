@@ -9,3 +9,17 @@ function useScripts() {
  
  `
 }
+
+
+function generalStuff (cacheName) {
+
+    let data = ""
+    data += `
+    const CACHE = "${cacheName}" // Name of the Current Cache
+    const DOWNLOADS = "downloads"  // Name of the Downloads Cache - For BG Fetch API
+    const OFFLINE = "/offline" // The Offline HTML Page
+    
+    `
+    return data
+    
+}
