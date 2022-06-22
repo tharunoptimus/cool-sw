@@ -412,3 +412,35 @@ function networkFirstLocal() {
         )
     `
 }
+
+
+function cacheFirstLocal() {
+    return `
+        // Cache First Falling Back to Network Strategy for Local Assets
+        event.respondWith(
+            caches.match(event.request).then((response) => {
+                if (response) {
+                    return response
+                }
+
+                return fetch(event.request).then((response) => {
+                    caches.open(CACHE).then((cache) => {
+                        cache.put(event.request, response)
+                        return response.clone()
+                    })
+                }).catch(err => {
+                    return caches.open(CACHE).then((cache) => {
+                        const offlineRequest = new Request(OFFLINE)
+                        return cache.match(offlineRequest)
+                    })
+                })
+            })
+        )
+    `
+}
+
+function fetchEventEnd() {
+    return `
+    })
+    `
+}
