@@ -79,3 +79,15 @@ function cdnStuff(cdnArray) {
     }
     return data
 }
+
+
+function autoCache () {
+    return `
+    
+    const AUTO_CACHE = [
+        // The Necessary Files for the Service Worker to work
+        OFFLINE,
+        "/",
+    ]
+    `
+}
