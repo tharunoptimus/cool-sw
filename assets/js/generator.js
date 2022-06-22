@@ -367,3 +367,18 @@ function networkFirstImage(imageCDNArray, CDNArray) {
     }
     return data
 }
+
+
+function otherRequests() {
+    return `
+    
+        // Requests to other domains and requests other than GET to this web app will always fetch from network
+        if (
+            !event.request.url.startsWith(self.location.origin) ||
+            event.request.method !== "GET"
+        ) {
+            return void event.respondWith(fetch(event.request).catch((err) => console.log(err)))
+        }
+        
+    `
+}
