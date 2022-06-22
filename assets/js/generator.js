@@ -91,3 +91,36 @@ function autoCache () {
     ]
     `
 }
+
+
+function preCache(assetsArray, pagesArray) {
+    let data = ""
+
+    if(assetsArray.length == 0 && pagesArray.length == 0) {
+        return `const PRE_CACHE = []`
+    }
+
+    data += `
+    const PRE_CACHE = [
+
+        // The Assets to Pre-Cache
+        `
+
+    assetsArray.forEach(element => {
+        data+= `"${element}",
+        `
+    })
+
+    data += `
+        // The Pages to Pre-Cache 
+        `
+    pagesArray.forEach(element => {
+        data+= `"${element}",
+        `
+    })
+
+    data += `
+    ]`
+
+    return data
+}
