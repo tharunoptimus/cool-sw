@@ -1,3 +1,7 @@
+function qs(element, parent = document) {
+	return parent.querySelector(element)
+}
+
 document.addEventListener("click", (e) => {
     let target = e.target
 

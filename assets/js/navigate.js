@@ -1,7 +1,3 @@
-function qs(element, parent = document) {
-	return parent.querySelector(element)
-}
-
 let firstPanel = qs(".firstPanel")
 let secondPanel = qs(".secondPanel")
 let thirdPanel = qs(".thirdPanel")
