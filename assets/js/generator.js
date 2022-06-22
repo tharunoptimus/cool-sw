@@ -23,3 +23,35 @@ function generalStuff (cacheName) {
     return data
     
 }
+
+
+function imageStuff(cdnArray, fallback) {
+
+    let data = ""
+    data += `const AVATARS = "avatars" // Name of the Image Network Cache
+    
+    `
+
+    if(cdnArray.length != 0) {
+    data += `// The links of the Image Network URLs to Cache
+    const IMAGE_NETWORK_URLS = [
+    
+        `
+
+    cdnArray.forEach(element => {
+        data += `"${element}",
+        `
+    });
+
+    data += `
+    ]
+    `
+    }
+    data += `
+    const DEFAULT_AVATAR = "${fallback}" // The Fallback image of the Image Network Cache
+
+    `
+    
+
+    return data
+}
