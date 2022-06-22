@@ -42,3 +42,53 @@ function getArrayValues(element) {
 }
 
 
+function finalize() {
+    
+    let swName = qs("#serviceWorkerName").value.trim()
+    let cacheName = qs("#cacheName").value.trim()
+    let hasOfflineHTML = document.querySelector('input[name="offlinePage"]:checked').value == 'true' ? true : false 
+    let useScripts = document.querySelector('input[name="importScripts"]:checked').value == 'true' ? true : false 
+    let respectNetwork = document.querySelector('input[name="respectNetwork"]:checked').value == 'true' ? true : false 
+
+    let cacheStrategy = {
+        cdn: document.querySelector('input[name="cdnDelivery"]:checked').value,
+        local: document.querySelector('input[name="localDelivery"]:checked').value
+    }
+
+    let technologies = {
+        backgroundSync: qs("#bgsync").checked,
+        periodicSync: qs("#periodicsync").checked,
+        push: qs("#webpush").checked,
+        backgroundFetch: qs("#bgfetch").checked
+    }
+    
+    let defaultAvatar = "https://avatars.dicebear.com/api/bottts/75.svg?colorful=true"
+    let fallbackUrl = qs("#fallbackAvatar").value
+
+    let imageStuff = {
+        cdn: getArrayValues(qs(".getImageCDNClass")),
+        fallback: fallbackUrl == "" ? defaultAvatar : fallbackUrl
+    }
+
+    let cdnStuff = {
+        cdn: getArrayValues(qs(".getCDNClass"))
+    }
+
+    let preCache = {
+        assetsArray: getArrayValues(qs(".precacheAssetsClass")),
+        pagesArray: getArrayValues(qs(".precachePagesClass"))
+    }
+
+    return {
+        hasOfflineHTML,
+        swName,
+        useScripts,
+        cacheName,
+        imageStuff,
+        cdnStuff,
+        preCache,
+        respectNetwork,
+        cacheStrategy,
+        technologies
+    }
+}
