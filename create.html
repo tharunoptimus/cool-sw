@@ -37,12 +37,12 @@
                     <div class="newInput">
                         <span>Do you have an offline.html page?</span>
                         <div class="radioInput">
-                            <input type="radio" name="offlinePage" id="yesOffline" class="inputForm" aria-label="I have an offline.html page" data-id="Great! You're one step closer!🎉🥳" required checked>
+                            <input type="radio" name="offlinePage" id="yesOffline" class="inputForm" aria-label="I have an offline.html page" data-id="Great! You're one step closer!🎉🥳" required checked value="true">
                             <label for="yesOffline">Yes, I have one! 😆</label>
                         </div>
 
                         <div class="radioInput">
-                            <input type="radio" name="offlinePage" id="noOffline" class="inputForm" aria-label="I don't have an offline.html page" data-id="No worries. We'll create one along the way🤗" required>
+                            <input type="radio" name="offlinePage" id="noOffline" class="inputForm" aria-label="I don't have an offline.html page" data-id="No worries. We'll create one along the way🤗" required value="false">
                             <label for="noOffline">No, I don't! 😢</label>
                         </div>
 
@@ -53,12 +53,12 @@
                     <div class="newInput">
                         <span>Would you want to use some of the functions from your existing script files?</span>
                         <div class="radioInput">
-                            <input type="radio" name="importScripts" id="needScript" class="inputForm" aria-label="Yes, I want to use it! 😆" required>
+                            <input type="radio" name="importScripts" id="needScript" class="inputForm" aria-label="Yes, I want to use it! 😆" required value="true">
                             <label for="needScript">Yes, I want to use it! 😆</label>
                         </div>
 
                         <div class="radioInput">
-                            <input type="radio" name="importScripts" id="noScript" class="inputForm" aria-label="No, I don't want to! 🙂" required checked>
+                            <input type="radio" name="importScripts" id="noScript" class="inputForm" aria-label="No, I don't want to! 🙂" required checked value="false">
                             <label for="noScript">No, I don't want to! 🙂</label>
                         </div>
 
@@ -78,12 +78,12 @@
                     <div class="newInput">
                         <span>Do you want to respect your user's network connection when pre-caching?</span>
                         <div class="radioInput">
-                            <input type="radio" name="respectNetwork" id="respectUser" class="inputForm" aria-label="Yes, I want to respect user's network connection 😇" required checked>
+                            <input type="radio" name="respectNetwork" id="respectUser" class="inputForm" aria-label="Yes, I want to respect user's network connection 😇" required checked value="true">
                             <label for="respectUser">Yes, I want to respect user's network connection 😇</label>
                         </div>
 
                         <div class="radioInput">
-                            <input type="radio" name="respectNetwork" id="dontRespect" class="inputForm" aria-label="Nah, who cares? 🥱" required>
+                            <input type="radio" name="respectNetwork" id="dontRespect" class="inputForm" aria-label="Nah, who cares? 🥱" required value="false">
                             <label for="dontRespect">Nah, who cares? 🥱</label>
                         </div>
 
@@ -93,7 +93,7 @@
                         <span>Enter the Assets 📦 to Pre-Cache</span>
                         <span class="subResponse">Enter the absolute links to the assets you want to pre-cache (relative to the root of your site)</span>
 
-                        <div class="valuesContainer">
+                        <div class="valuesContainer precacheAssetsClass">
                             <span class="value">
                                 <input type="text" aria-label="Asset Link" placeholder="/assets/css/main.css">
                                 <img class="deleteIcon" src="/assets/images/delete.svg" height="40" width="40" alt="Delete Entry">
@@ -110,7 +110,7 @@
                         <span>Enter the Pages 📄 to Pre-Cache</span>
                         <span class="subResponse">Enter the absolute links to the pages you want to pre-cache (relative to the root of your site)</span>
 
-                        <div class="valuesContainer">
+                        <div class="valuesContainer precachePagesClass">
                             <span class="value">
                                 <input type="text" aria-label="Asset Link" placeholder="/blog">
                                 <img class="deleteIcon" src="/assets/images/delete.svg" height="40" width="40" alt="Delete Entry">
@@ -137,7 +137,7 @@
                         <span class="subResponse"> If so, do you want to cache them as well? If yes, add the links to the cdns.</span>
                         <span class="subResponse"> Just enter the hostnames of the CDNs. For Eg: If it's jQueryV3.6.0 from Google, just `ajax.googleapis.com` is enough</span>
     
-                        <div class="valuesContainer">
+                        <div class="valuesContainer getCDNClass">
                             <span class="value">
                                 <input type="text" aria-label="Asset Link" placeholder="cdn.jsdelivr.net">
                                 <img class="deleteIcon" src="/assets/images/delete.svg" height="40" width="40" alt="Delete Entry">
@@ -154,7 +154,7 @@
                         <span>Do you use an Image Network like 8biticon or face.co?</span>
                         <span class="subResponse">If yes, add the links to the Image CDNS.</span>
     
-                        <div class="valuesContainer">
+                        <div class="valuesContainer getImageCDNClass">
                             <span class="value">
                                 <input type="text" aria-label="Asset Link" placeholder="avatars.dicebear.com">
                                 <img class="deleteIcon" src="/assets/images/delete.svg" height="40" width="40" alt="Delete Entry">
@@ -168,7 +168,7 @@
 
                         <br/>
                         <span class="subResponse">Enter the link for a fallback Image. This image will be used if the service worker encounters troubles while fetching the real images</span>
-                        <input type="text" class="inputForm" aria-label="Link to the Fallback Image" required placeholder="/assets/images/profile.png">
+                        <input type="text" id="fallbackAvatar" class="inputForm" aria-label="Link to the Fallback Image" required placeholder="/assets/images/profile.png">
 
                     </div>
 
@@ -180,12 +180,12 @@
                     <div class="newInput">
                         <span>Delivery Strategy of your web app files - local</span>
                         <div class="radioInput">
-                            <input type="radio" name="localDelivery" id="cacheFirstLocal" class="inputForm" aria-label="I have an offline.html page" required checked>
+                            <input type="radio" name="localDelivery" id="cacheFirstLocal" class="inputForm" aria-label="I have an offline.html page" required checked value="cacheFirst">
                             <label for="cacheFirstLocal">Cache First Falling back to Network Strategy 💪</label>
                         </div>
 
                         <div class="radioInput">
-                            <input type="radio" name="localDelivery" id="networkFirstLocal" class="inputForm" aria-label="I don't have an offline.html page" required>
+                            <input type="radio" name="localDelivery" id="networkFirstLocal" class="inputForm" aria-label="I don't have an offline.html page" required value="networkFirst">
                             <label for="networkFirstLocal">Network First Falling back to Cache Strategy 🧠</label>
                         </div>
 
@@ -194,12 +194,12 @@
                     <div class="newInput">
                         <span>Delivery Strategy of your Image network and CDNs</span>
                         <div class="radioInput">
-                            <input type="radio" name="cdnDelivery" id="cacheFirstCDN" class="inputForm" aria-label="I have an offline.html page" required checked>
+                            <input type="radio" name="cdnDelivery" id="cacheFirstCDN" class="inputForm" aria-label="I have an offline.html page" required checked value="cacheFirst">
                             <label for="cacheFirstCDN">Cache First Falling back to Network Strategy 💪</label>
                         </div>
 
                         <div class="radioInput">
-                            <input type="radio" name="cdnDelivery" id="networkFirstCDN" class="inputForm" aria-label="I don't have an offline.html page" required>
+                            <input type="radio" name="cdnDelivery" id="networkFirstCDN" class="inputForm" aria-label="I don't have an offline.html page" required value="networkFirst">
                             <label for="networkFirstCDN">Network First Falling back to Cache Strategy 🧠</label>
                         </div>
 
@@ -222,22 +222,22 @@
                         <span>Do you plan to use these technologies?</span>
                         
                         <div class="checkInput">
-                            <input type="checkbox" name="technology" id="fetch" aria-label="Background Fetch">
+                            <input type="checkbox" class="technology" name="technology" id="bgfetch" aria-label="Background Fetch">
                             <label for="fetch">Background Fetch</label>
                         </div>
 
                         <div class="checkInput">
-                            <input type="checkbox" name="technology" id="periodic" aria-label="Periodic Background Sync">
+                            <input type="checkbox" class="technology" name="technology" id="periodicsync" aria-label="Periodic Background Sync">
                             <label for="periodic">Periodic Background Sync</label>
                         </div>
 
                         <div class="checkInput">
-                            <input type="checkbox" name="technology" id="push" aria-label="Push API">
+                            <input type="checkbox" class="technology" name="technology" id="webpush" aria-label="Push API">
                             <label for="push">Push API</label>
                         </div>
 
                         <div class="checkInput">
-                            <input type="checkbox" name="technology" id="sync" aria-label="Background Sync">
+                            <input type="checkbox" class="technology" name="technology" id="bgsync" aria-label="Background Sync">
                             <label for="sync">Background Sync</label>
                         </div>
                     </div>
