@@ -160,3 +160,51 @@ function respectNetwork(respect) {
 
     return data
 }
+
+
+function installAndActivate() {
+    return `
+    
+    // The Install Event is fired when the Service Worker is first installed.
+    // This is where we can set up things in the Service Worker that are required
+    // The Pre-Cache is done at the install event.
+    self.addEventListener("install", (event) => {
+        event.waitUntil(
+            caches
+                .open(CACHE) // Opening the Cache
+                .then((cache) => cache.addAll(CACHE_ASSETS)) // Adding the Listed Assets to the Cache
+                .then(self.skipWaiting()) // The Service Worker takes control of the page immediately
+        )
+    })
+
+
+    // The Activate Event is fired when the Service Worker is first installed.
+    // This is where we can clean up old caches.
+    self.addEventListener("activate", (event) => {
+        event.waitUntil(
+            caches
+                .keys()
+                .then((cacheNames) => {
+                    // Remove caches that are not required anymore
+                    // This filters the current cache, Image Network Cache and CDN Cache
+                    return cacheNames.filter(
+                        (cacheName) =>
+                            CACHE !== cacheName &&
+                            AVATARS !== cacheName &&
+                            CDNS !== cacheName
+                    )
+                })
+                .then((unusedCaches) => {
+                    console.log("DESTROYING CACHE", unusedCaches.join(","))
+                    return Promise.all(
+                        unusedCaches.map((unusedCache) => {
+                            return caches.delete(unusedCache)
+                        })
+                    )
+                })
+                .then(() => self.clients.claim()) // The Service Worker takes control of all pages immediately
+        )
+    })
+
+    `
+}
