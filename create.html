@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/create.css">
+    <meta name="description" content="Generate a service worker in an instant ⚡">
     <title>Create New Service Worker</title>
 </head>
 <body>
@@ -25,12 +26,12 @@
 
                     <div class="newInput">
                         <span>What do you want to name your new service worker?</span>
-                        <input type="text" id="serviceWorkerName" class="inputForm" aria-label="Name of your Service Worker" required placeholder="Name of your new service worker">
+                        <input type="text" id="serviceWorkerName" class="inputForm" aria-label="Name of your Service Worker" required placeholder="sw">
                     </div>
                     
                     <div class="newInput">
                         <span>What do you want the name of the cache to be?</span>
-                        <input type="text" id="cacheName" class="inputForm" aria-label="Name of your cache" required placeholder="Name of your cache">
+                        <input type="text" id="cacheName" class="inputForm" aria-label="Name of your cache" required placeholder="content-v1">
                     </div>
                    
                     <div class="newInput">
@@ -41,7 +42,7 @@
                         </div>
 
                         <div class="radioInput">
-                            <input type="radio" name="offlinePage" id="noOffline" class="inputForm" aria-label="I don't have an offline.html page" required>
+                            <input type="radio" name="offlinePage" id="noOffline" class="inputForm" aria-label="I don't have an offline.html page" required checked>
                             <label for="noOffline">No, I don't! 😢</label>
                         </div>
 
@@ -50,9 +51,9 @@
                     </div>
                    
                     <div class="newInput">
-                        <span>Would you want to use some of the functions from your script files?</span>
+                        <span>Would you want to use some of the functions from your existing script files?</span>
                         <div class="radioInput">
-                            <input type="radio" name="importScripts" id="needScript" class="inputForm" aria-label="Yes, I want to use it! 😆" required>
+                            <input type="radio" name="importScripts" id="needScript" class="inputForm" aria-label="Yes, I want to use it! 😆" required checked>
                             <label for="needScript">Yes, I want to use it! 😆</label>
                         </div>
 
@@ -77,7 +78,7 @@
                     <div class="newInput">
                         <span>Do you want to respect your user's network connection when pre-caching?</span>
                         <div class="radioInput">
-                            <input type="radio" name="respectNetwork" id="respectUser" class="inputForm" aria-label="Yes, I want to respect user's network connection 😇" required>
+                            <input type="radio" name="respectNetwork" id="respectUser" class="inputForm" aria-label="Yes, I want to respect user's network connection 😇" required checked>
                             <label for="respectUser">Yes, I want to respect user's network connection 😇</label>
                         </div>
 
@@ -179,7 +180,7 @@
                     <div class="newInput">
                         <span>Delivery Strategy of your web app files - local</span>
                         <div class="radioInput">
-                            <input type="radio" name="localDelivery" id="cacheFirstLocal" class="inputForm" aria-label="I have an offline.html page" required>
+                            <input type="radio" name="localDelivery" id="cacheFirstLocal" class="inputForm" aria-label="I have an offline.html page" required checked>
                             <label for="cacheFirstLocal">Cache First Falling back to Network Strategy 💪</label>
                         </div>
 
@@ -193,7 +194,7 @@
                     <div class="newInput">
                         <span>Delivery Strategy of your Image network and CDNs</span>
                         <div class="radioInput">
-                            <input type="radio" name="cdnDelivery" id="cacheFirstCDN" class="inputForm" aria-label="I have an offline.html page" required>
+                            <input type="radio" name="cdnDelivery" id="cacheFirstCDN" class="inputForm" aria-label="I have an offline.html page" required checked>
                             <label for="cacheFirstCDN">Cache First Falling back to Network Strategy 💪</label>
                         </div>
 
@@ -215,10 +216,10 @@
 
             </div>
             <div class="fourthPanel">
-                <span class="panelTitle">Other Browser Technologies</span>
+                <span class="panelTitle">Powerful Browser Technologies ⚡</span>
                 <div class="questionContainer">
                     <div class="newInput">
-                        <span>Are you planning on using these technologies?</span>
+                        <span>Do you plan to use these technologies?</span>
                         
                         <div class="checkInput">
                             <input type="checkbox" name="technology" id="fetch" aria-label="Background Fetch">
@@ -250,8 +251,12 @@
                 </div>
 
             </div>
+            <div class="fifthPanel">
+
+                this is the result page
+            </div>
         </div>
     </div>
-    <script src="/assets/js/create.js"></script>
+    <script src="/assets/js/navigate.js"></script>
 </body>
 </html>
