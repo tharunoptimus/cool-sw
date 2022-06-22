@@ -208,3 +208,83 @@ function installAndActivate() {
 
     `
 }
+
+
+function fetchEventStart() {
+    return `
+
+    self.addEventListener("fetch", (event) => {
+    `
+}
+
+function cacheFirstImage(imageCDNArray, CDNArray) {
+    let data = ""
+
+    if(imageCDNArray.length != 0) {
+
+    data += ` 
+        // Uses Cache First Falling back to Network Strategy for the Image CDNS
+        if (`
+
+    imageCDNArray.forEach(e => {
+        data += `
+            event.request.url.includes("${e}") ||`
+    })
+
+    data += ` false
+        ) {
+            event.respondWith(
+                caches.open(AVATARS).then((cache) => {
+                    return cache.match(event.request).then((response) => {
+                        if (response) return response
+                        return fetch(event.request)
+                            .then((response) => {
+                                cache.put(event.request, response.clone())
+                                return response
+                            })
+                            .catch(() => {
+                                return caches.match(DEFAULT_AVATAR)
+                            })
+                    })
+                })
+            )
+            return
+        }
+        
+        
+    `
+    }
+
+    if(CDNArray.length != 0) {
+
+    data += `   // Uses Cache First Network Strategy for the CDNS
+
+        if (`
+    CDNArray.forEach(e => {
+        data += `
+            event.request.url.includes("${e}") ||`
+    })
+
+    data += ` false
+        ) {
+            event.respondWith(
+                caches.open(CDNS).then((cache) => {
+                    return cache.match(event.request).then((response) => {
+                        if (response) return response
+                        return fetch(event.request)
+                            .then((response) => {
+                                cache.put(event.request, response.clone())
+                                return response
+                            })
+                    })
+                })
+            )
+            return
+        }
+
+
+        `
+    }
+    return data
+        
+}
