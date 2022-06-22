@@ -494,3 +494,59 @@ function backgroundSync() {
     
     `
 }
+
+
+function periodicBackSync() {
+    return `
+    
+    
+    // ------------------------------------ PERIODIC BACKGROUND SYNC -----------------------------------
+    /* Steps to Perform Periodic Background Sync
+        1. Setup a tag name for a single task
+        2. Register the task with the set up tag name
+        3. Listen for the 'periodicsync' event
+        4. If the event.tag matches your set up tag run a function
+    */
+
+
+    // A Simple Tag Name for a single Periodic Background Sync Task
+    // You can add multiple tags and call the requestPeriodicBGSync Function to register all
+    let periodicSyncTagName = 'test-tag-from-devtools'
+
+    // Registering the Periodic Background Sync Task with the Tag Name
+    requestPeriodicBGSync(periodicMeowSyncTagName, 0.5)
+
+    // Function to register a Periodic Background Sync
+    // Provide a tag name to register
+    // Also provide an optional parameter hours to specify the interval - default is 1 hour
+    async function requestPeriodicBGSync(tagName, hours = 1) {
+        try {
+            await self.registration.periodicSync.register(tagName, {
+                minInterval: hours * 60 * 60 * 1000,
+            })
+        } catch (err) {
+            console.log("Unable to REGISTER periodic sync " + err)
+            setTimeout(() => requestPeriodicBGSync(tagName, hours), 10000)
+        }
+    }
+
+    // This is the PERIODICSYNC Event Listener - Periodic Background Sync
+    // This event has a tagname with which you can run different functions
+    self.addEventListener("periodicsync", (event) => {
+        if (event.tag == periodicSyncTagName) {
+            console.log("Executing Periodic Background Sync of tagname: " + event.tag)
+            event.waitUntil(periodicStuff()) // Actually Executing the periodicStuff function
+        }
+    })
+
+    function periodicStuff() {
+        // This function will be executed every specified interval
+        console.log("Periodic stuff")
+    }
+
+
+    // ------------------------------------ ------------------------ -----------------------------------
+
+    
+    `
+}
