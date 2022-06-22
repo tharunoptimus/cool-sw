@@ -288,3 +288,82 @@ function cacheFirstImage(imageCDNArray, CDNArray) {
     return data
         
 }
+
+
+function networkFirstImage(imageCDNArray, CDNArray) {
+    let data = ""
+
+    if (imageCDNArray.length != 0) {
+
+    data += ` 
+        // Uses Network First Falling back to Cache Strategy for the Image CDNS
+        if (`
+
+    imageCDNArray.forEach(e => {
+        data += `
+            event.request.url.includes("${e}") ||`
+    })
+
+    data += ` false
+        ) {
+            event.respondWith(
+                fetch(event.request)
+                .then((response) => {
+                    caches.open(AVATARS).then((cache) => {
+                        cache.put(event.request, response)
+                    })
+                    return response.clone()
+                })
+                .catch(() => {
+                    caches.open(AVATARS).then((cache) => {
+                        return cache.match(event.request).then((response) => {
+                            if(response) return response
+                            return caches.match(DEFAULT_AVATAR)
+                        })
+                    })
+                })
+            )
+            return
+        }
+        
+        
+        `
+    }
+
+    if(CDNArray.length != 0) {
+
+    data += `   // Uses Network First Falling back to Cache Strategy for the CDNS
+
+        if (`
+    CDNArray.forEach(e => {
+        data += `
+            event.request.url.includes("${e}") ||`
+    })
+
+    data += ` false
+        ) {
+            event.respondWith(
+                fetch(event.request)
+                .then((response) => {
+                    caches.open(CDNS).then((cache) => {
+                        cache.put(event.request, response)
+                    })
+                    return response.clone()
+                })
+                .catch(() => {
+                    caches.open(CDNS).then((cache) => {
+                        return cache.match(event.request).then((response) => {
+                            if(response) return response
+                        })
+                    })
+                })
+            )
+            return
+        }
+
+
+    `
+
+    }
+    return data
+}
