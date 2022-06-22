@@ -38,7 +38,6 @@ function showProgress(number) {
 		thirdProgress,
 		fourthProgress,
 	]
-	console.log(elements)
 	for (let j = 0; j < 4; j++) {
 		elements[j].classList.remove("progressActive")
 	}
