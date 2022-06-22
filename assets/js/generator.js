@@ -10,7 +10,6 @@ function useScripts() {
  `
 }
 
-
 function generalStuff (cacheName) {
 
     let data = ""
@@ -23,7 +22,6 @@ function generalStuff (cacheName) {
     return data
     
 }
-
 
 function imageStuff(cdnArray, fallback) {
 
@@ -56,7 +54,6 @@ function imageStuff(cdnArray, fallback) {
     return data
 }
 
-
 function cdnStuff(cdnArray) {
     let data = ""
     data += `
@@ -80,7 +77,6 @@ function cdnStuff(cdnArray) {
     return data
 }
 
-
 function autoCache () {
     return `
     
@@ -91,7 +87,6 @@ function autoCache () {
     ]
     `
 }
-
 
 function preCache(assetsArray, pagesArray) {
     let data = ""
@@ -124,7 +119,6 @@ function preCache(assetsArray, pagesArray) {
 
     return data
 }
-
 
 function respectNetwork(respect) {
     let data = ""
@@ -160,7 +154,6 @@ function respectNetwork(respect) {
 
     return data
 }
-
 
 function installAndActivate() {
     return `
@@ -208,7 +201,6 @@ function installAndActivate() {
 
     `
 }
-
 
 function fetchEventStart() {
     return `
@@ -289,7 +281,6 @@ function cacheFirstImage(imageCDNArray, CDNArray) {
         
 }
 
-
 function networkFirstImage(imageCDNArray, CDNArray) {
     let data = ""
 
@@ -368,7 +359,6 @@ function networkFirstImage(imageCDNArray, CDNArray) {
     return data
 }
 
-
 function otherRequests() {
     return `
     
@@ -382,7 +372,6 @@ function otherRequests() {
         
     `
 }
-
 
 function networkFirstLocal() {
     return `
@@ -412,7 +401,6 @@ function networkFirstLocal() {
         )
     `
 }
-
 
 function cacheFirstLocal() {
     return `
@@ -444,7 +432,6 @@ function fetchEventEnd() {
     })
     `
 }
-
 
 function backgroundSync() {
     return `
@@ -494,7 +481,6 @@ function backgroundSync() {
     
     `
 }
-
 
 function periodicBackSync() {
     return `
@@ -551,7 +537,6 @@ function periodicBackSync() {
     `
 }
 
-
 function push() {
     return `
     
@@ -576,7 +561,6 @@ function push() {
     
     `
 }
-
 
 function backgroundFetch() {
     return `
@@ -650,7 +634,6 @@ function backgroundFetch() {
 }
 
 
-
 let options = {
     swName: "sw",
     useScripts: false,
@@ -686,7 +669,6 @@ let options = {
         backgroundFetch: false
     }
 }
-
 
 function generate(options) {
     let data = ""
