@@ -107,6 +107,24 @@ function download(filename, text) {
     return false
 }
 
+function main() {
+    let data = finalize()
+    printCodeSnippet(data.swName)
+    fileName = data.swName + ".js"
+    text = generate(data)
+}
+
+function printCodeSnippet(swName) {
+    let data = 
+    `    <script defer>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/${swName}.js');
+        }
+    </script>`
+
+    qs("#codeSnippet").innerText = data
+}
+
 qs(".downloadOffline").addEventListener("click", e => {
     e.preventDefault()
     downloadURI("/offline.html")
