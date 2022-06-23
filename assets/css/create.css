@@ -271,9 +271,6 @@ body {
     background-color: hsl(96, 100%, 15%);
 }
 
-
-
-
 .valuesContainer span.value {
     display: flex;
     align-items: center;
@@ -311,7 +308,6 @@ body {
 .addMoreValues:hover, .addMoreValues:focus {
     transform: scale(1.05);
     transition: all 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
-
 }
 
 .addMoreValues img {
@@ -321,4 +317,71 @@ body {
 
 .addMoreValues span {
     pointer-events: none;
+}
+
+.downloadButton, .downloadOffline {
+    display : flex;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.2em 0.6em;
+    border: 1px solid var(--lightBlack);
+    border-radius: 7px;
+    box-shadow: 4px 6px 3px 0 #44444444;
+    width: -moz-fit-content;
+    width: fit-content;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: all 0.2s linear;
+    font-size: 1.3rem;
+
+}
+
+.downloadButton:active, .downloadOffline:active {
+    transform: scale(1.05);
+    transition: all 0.2s linear;
+}
+
+/* .downloadButton:hover {
+    transform: scale(1.05);
+}   */
+
+.downloadButton img, .downloadOffline img {
+    padding-right: 1rem;
+    pointer-events: none;
+}
+
+.downloadButton span, .downloadOffline span {
+    pointer-events: none;
+}
+
+.resultSpan {
+    font-size: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+.resultSubSpan {
+    font-size: 1.2rem;
+    padding-top: 1.1rem;
+}
+
+.resultCode {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 32px 0;
+    overflow: auto;
+    padding: 16px;
+    white-space: pre;
+    border: 1px solid #dadce0;
+    background: #f7f7f7;
+    color: #202124;
+    font: 1rem/1.5em SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    -moz-tab-size: 2;
+    tab-size: 2;
+    text-align: left;
+    word-spacing: normal;
 }
