@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate Cool Service Workers Instantly ⚡">
+    <meta name="keywords" content="service workers, instant, generator">
     <link rel="stylesheet" href="/assets/css/main.css">
-    <meta name="description" content="Generate a service worker in an instant ⚡">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <title>Create New Service Worker</title>
 </head>
 <body>
@@ -272,9 +276,13 @@
             </div>
         </div>
     </div>
-    <script src="/assets/js/keyval.js"></script>
     <script src="/assets/js/generator.js"></script>
     <script src="/assets/js/app.js"></script>
     <script src="/assets/js/navigate.js"></script>
+    <script defer>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/serviceworker.js');
+        }
+    </script>
 </body>
 </html>

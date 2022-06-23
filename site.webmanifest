@@ -1,0 +1,24 @@
+{
+	"short_name": "SW Generator",
+	"name": "SW Generator",
+	"description": "Generate Cool Service Workers Instantly ⚡.",
+	"icons": [
+		{
+			"src": "./logo.png",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "any"
+		},
+		{
+			"src": "./logo.png",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "maskable"
+		}
+	],
+	"start_url": "/",
+	"background_color": "#ffffff",
+	"display": "standalone",
+	"theme_color": "#ffffff",
+	"lang": "en-US"
+}
