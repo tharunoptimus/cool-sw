@@ -252,12 +252,28 @@
 
             </div>
             <div class="fifthPanel">
+                <span class="panelTitle">Service Worker is ready to be installed 💻💠⚡</span>
+                <button type="button" class="downloadButton">
+                    <img src="/assets/images/download.svg" alt="Download Service Worker" height="40" width="40">
+                    <span>Download Service Worker</span>
+                </button>
+                <button type="button" class="downloadOffline">
+                    <img src="/assets/images/download.svg" alt="Download Offline.html" height="40" width="40">
+                    <span>Download Offline.html</span>
+                </button>
 
-                this is the result page
+                <span class="resultSpan">Points to remember:</span>
+                <span class="resultSubSpan">&bull; Place the service worker in the root of your site and make sure offline.html also lives there.</span>
+                <span class="resultSubSpan">&bull; Add this to end of your &lt;body&gt; tag in your index.html file:</span>
+                <pre class="resultCode" id="codeSnippet"></pre>
+                <span class="resultSubSpan">&bull; Make sure the assets you want to cache are in the specified path. Failure to do so will result in a failed installation of the service worker.</span>
+                <span class="resultSubSpan">&bull; Background Sync, Periodic Background Sync, Background Fetch will not work unless the web app is installed as a Progressive Web App (PWA) and is served from a HTTPS server or a localhost server.</span>
+                <span class="resultSubSpan">&bull; Thanks for Using this Service Worker Generator! 🖖 :-)</span>
             </div>
         </div>
     </div>
     <script src="/assets/js/keyval.js"></script>
+    <script src="/assets/js/generator.js"></script>
     <script src="/assets/js/app.js"></script>
     <script src="/assets/js/navigate.js"></script>
 </body>
