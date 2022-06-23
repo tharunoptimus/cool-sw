@@ -74,7 +74,7 @@ function finalize() {
 
     let imageStuff = {
         cdn: getArrayValues(qs(".getImageCDNClass")),
-        fallback: fallbackUrl == "" ? defaultAvatar : fallbackUrl
+        fallback: fallbackUrl
     }
 
     let cdnStuff = {
