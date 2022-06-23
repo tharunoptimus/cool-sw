@@ -4,13 +4,13 @@
 	"description": "Generate Cool Service Workers Instantly ⚡.",
 	"icons": [
 		{
-			"src": "./logo.png",
+			"src": "/logo.png",
 			"type": "image/png",
 			"sizes": "512x512",
 			"purpose": "any"
 		},
 		{
-			"src": "./logo.png",
+			"src": "/logo.png",
 			"type": "image/png",
 			"sizes": "512x512",
 			"purpose": "maskable"
