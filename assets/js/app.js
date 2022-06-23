@@ -48,7 +48,11 @@ function getArrayValues(element) {
 function finalize() {
     
     let swName = qs("#serviceWorkerName").value.trim()
+    swName = swName == "" ? "sw" : swName
+
     let cacheName = qs("#cacheName").value.trim()
+    cacheName = cacheName == "" ? "content-v1" : cacheName
+
     let hasOfflineHTML = document.querySelector('input[name="offlinePage"]:checked').value == 'true' ? true : false 
     let useScripts = document.querySelector('input[name="importScripts"]:checked').value == 'true' ? true : false 
     let respectNetwork = document.querySelector('input[name="respectNetwork"]:checked').value == 'true' ? true : false 
