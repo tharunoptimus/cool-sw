@@ -292,10 +292,10 @@ body {
 
 @media screen and (max-width: 480px) {
     .newInput .radioInput input[type="radio"], .newInput .checkInput input[type="checkbox"] {
-        -ms-transform: scale(2); /* IE 9 */
-        -webkit-transform: scale(2); /* Chrome, Safari, Opera */
-        transform: scale(2);
-        margin-bottom: 1rem;
+        -ms-transform: scale(1.7); /* IE 9 */
+        -webkit-transform: scale(1.7); /* Chrome, Safari, Opera */
+        transform: scale(1.7);
+        margin-bottom: 1.3rem;
     }
 
     .newInput .radioInput label, .newInput .checkInput label {
