@@ -1,3 +1,6 @@
+let text = ""
+let fileName = ""
+
 function qs(element, parent = document) {
 	return parent.querySelector(element)
 }
@@ -124,6 +127,12 @@ function printCodeSnippet(swName) {
 
     qs("#codeSnippet").innerText = data
 }
+
+
+qs(".downloadButton").addEventListener("click", e => {
+    e.preventDefault()
+    download(fileName, text)
+})
 
 qs(".downloadOffline").addEventListener("click", e => {
     e.preventDefault()
