@@ -301,9 +301,9 @@ function networkFirstImage(imageCDNArray, CDNArray) {
                 fetch(event.request)
                 .then((response) => {
                     caches.open(AVATARS).then((cache) => {
-                        cache.put(event.request, response)
+                        cache.put(event.request, response.clone())
                     })
-                    return response.clone()
+                    return response
                 })
                 .catch(() => {
                     caches.open(AVATARS).then((cache) => {
@@ -337,9 +337,9 @@ function networkFirstImage(imageCDNArray, CDNArray) {
                 fetch(event.request)
                 .then((response) => {
                     caches.open(CDNS).then((cache) => {
-                        cache.put(event.request, response)
+                        cache.put(event.request, response.clone())
                     })
-                    return response.clone()
+                    return response
                 })
                 .catch(() => {
                     caches.open(CDNS).then((cache) => {
@@ -381,9 +381,9 @@ function networkFirstLocal() {
             fetch(event.request)
             .then((response) => {
                 caches.open(CACHE).then((cache) => {
-                    cache.put(event.request, response)
+                    cache.put(event.request, response.clone())
                 })
-                return response.clone()
+                return response
             })
             .catch((_err) => {
                 return caches.match(event.request).then((cachedResponse) => {
@@ -413,8 +413,8 @@ function cacheFirstLocal() {
 
                 return fetch(event.request).then((response) => {
                     caches.open(CACHE).then((cache) => {
-                        cache.put(event.request, response)
-                        return response.clone()
+                        cache.put(event.request, response.clone())
+                        return response
                     })
                 }).catch(err => {
                     return caches.open(CACHE).then((cache) => {
