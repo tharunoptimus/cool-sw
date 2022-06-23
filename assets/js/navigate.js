@@ -86,4 +86,7 @@ secondProgress.addEventListener("click", () => navigate(2))
 thirdProgress.addEventListener("click", () => navigate(3))
 fourthProgress.addEventListener("click", () => navigate(4))
 
-// finishButton.addEventListener("click", () => navigate(5))
+finishButton.addEventListener("click", () => {
+	main()
+	navigate(5)
+})
