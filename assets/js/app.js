@@ -141,6 +141,7 @@ qs(".downloadButton").addEventListener("click", e => {
 qs(".downloadOffline").addEventListener("click", e => {
     e.preventDefault()
     downloadURI("/offline.html", "offline.html")
+    
 })
 
 function downloadURI(uri, name) {
