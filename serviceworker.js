@@ -1,4 +1,4 @@
-const CACHE = "content-v1" 
+const CACHE = "content-v2" 
 const OFFLINE = "/offline" 
 
 const AUTO_CACHE = [
@@ -53,8 +53,8 @@ self.addEventListener("fetch", (event) => {
 			return fetch(event.request)
 				.then((response) => {
 					caches.open(CACHE).then((cache) => {
-						cache.put(event.request, response)
-						return response.clone()
+						cache.put(event.request, response.clone())
+						return response
 					})
 				})
 				.catch((err) => {
