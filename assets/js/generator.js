@@ -414,8 +414,8 @@ function cacheFirstLocal() {
                 return fetch(event.request).then((response) => {
                     caches.open(CACHE).then((cache) => {
                         cache.put(event.request, response.clone())
-                        return response
                     })
+                    return response
                 }).catch(err => {
                     return caches.open(CACHE).then((cache) => {
                         const offlineRequest = new Request(OFFLINE)
