@@ -123,9 +123,16 @@ function main() {
 
 function printCodeSnippet(swName) {
     let data = 
-    `    <script defer>
+    `   <script defer>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/${swName}.js');
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('${swName}.js')
+                    .then((reg) => console.log('%cA Service Worker is installed Successfully and is ACTIVE for the scope:',  'color: #4cd137;', reg.scope))
+                    .catch((err) => {
+                        console.log('%cService Worker Installation FAILED. ', 'color: #f39c12; font-size: 1.5rem;')
+                        console.log('%cReason: ', 'color: #f39c12;', err)
+                    })
+            })
         }
     </script>`
 
