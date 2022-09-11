@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Generate Cool Service Workers Instantly ⚡">
     <meta name="keywords" content="service workers, instant, generator">
-    <meta name="theme-color" content="#FFFFFF"/>
+    <meta name="theme-color" content="#FFFFFF" />
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <title>Create New Service Worker</title>
 </head>
+
 <body>
     <div class="wrapper">
 
         <span class="title">Generate a 😎 Service Worker in an Instant ⚡</span>
 
         <div class="formProgress">
-            <button type="button" class="progressIcon progressActive firstProgress" aria-label="Progress Level General Configuration">General Configuration</button>
-            <button type="button" class="progressIcon secondProgress" aria-label="Progress Level Caching Strategy">Caching Strategy</button>
-            <button type="button" class="progressIcon thirdProgress" aria-label="Progress Level Life Cycle">Life Cycle</button>
-            <button type="button" class="progressIcon fourthProgress" aria-label="Progress Level Browser Technologies">Browser Technologies</button>
+            <button type="button" class="progressIcon progressActive firstProgress"
+                aria-label="Progress Level General Configuration">General Configuration</button>
+            <button type="button" class="progressIcon secondProgress"
+                aria-label="Progress Level Caching Strategy">Caching Strategy</button>
+            <button type="button" class="progressIcon thirdProgress" aria-label="Progress Level Life Cycle">Life
+                Cycle</button>
+            <button type="button" class="progressIcon fourthProgress"
+                aria-label="Progress Level Browser Technologies">Browser Technologies</button>
         </div>
 
         <div class="formContainer">
@@ -31,39 +37,47 @@
 
                     <div class="newInput">
                         <span>What do you want to name your new service worker?</span>
-                        <input type="text" id="serviceWorkerName" class="inputForm" aria-label="Name of your Service Worker" required placeholder="sw">
+                        <input type="text" id="serviceWorkerName" class="inputForm"
+                            aria-label="Name of your Service Worker" required placeholder="sw">
                     </div>
-                    
+
                     <div class="newInput">
                         <span>What do you want the name of the cache to be?</span>
-                        <input type="text" id="cacheName" class="inputForm" aria-label="Name of your cache" required placeholder="content-v1">
+                        <input type="text" id="cacheName" class="inputForm" aria-label="Name of your cache" required
+                            placeholder="content-v1">
                     </div>
-                   
+
                     <div class="newInput">
                         <span>Do you have an offline.html page?</span>
                         <div class="radioInput">
-                            <input type="radio" name="offlinePage" id="yesOffline" class="inputForm" aria-label="I have an offline.html page" data-id="Great! You're one step closer!🎉🥳" required checked value="true">
+                            <input type="radio" name="offlinePage" id="yesOffline" class="inputForm"
+                                aria-label="I have an offline.html page" data-id="Great! You're one step closer!🎉🥳"
+                                required checked value="true">
                             <label for="yesOffline">Yes, I have one! 😆</label>
                         </div>
 
                         <div class="radioInput">
-                            <input type="radio" name="offlinePage" id="noOffline" class="inputForm" aria-label="I don't have an offline.html page" data-id="No worries. We'll create one along the way🤗" required value="false">
+                            <input type="radio" name="offlinePage" id="noOffline" class="inputForm"
+                                aria-label="I don't have an offline.html page"
+                                data-id="No worries. We'll create one along the way🤗" required value="false">
                             <label for="noOffline">No, I don't! 😢</label>
                         </div>
 
                         <span class="subResponse">Great! You're one step closer!🎉🥳</span>
 
                     </div>
-                   
+
                     <div class="newInput">
                         <span>Would you want to use some of the functions from your existing script files?</span>
                         <div class="radioInput">
-                            <input type="radio" name="importScripts" id="needScript" class="inputForm" aria-label="Yes, I want to use it! 😆" required value="true">
+                            <input type="radio" name="importScripts" id="needScript" class="inputForm"
+                                aria-label="Yes, I want to use it! 😆" required value="true">
                             <label for="needScript">Yes, I want to use it! 😆</label>
                         </div>
 
                         <div class="radioInput">
-                            <input type="radio" name="importScripts" id="noScript" class="inputForm" aria-label="No, I don't want to! 🙂" required checked value="false">
+                            <input type="radio" name="importScripts" id="noScript" class="inputForm"
+                                aria-label="No, I don't want to! 🙂" required checked value="false">
                             <label for="noScript">No, I don't want to! 🙂</label>
                         </div>
 
@@ -71,7 +85,8 @@
 
                     <div class="navigationButtonsContainer">
                         <br />
-                        <button class="nextSection" id="firstNextButton" type="button" aria-label="Next Section">Next</button>
+                        <button class="nextSection" id="firstNextButton" type="button"
+                            aria-label="Next Section">Next</button>
                     </div>
 
                 </div>
@@ -83,12 +98,15 @@
                     <div class="newInput">
                         <span>Do you want to respect your user's network connection when pre-caching?</span>
                         <div class="radioInput">
-                            <input type="radio" name="respectNetwork" id="respectUser" class="inputForm" aria-label="Yes, I want to respect user's network connection 😇" required checked value="true">
+                            <input type="radio" name="respectNetwork" id="respectUser" class="inputForm"
+                                aria-label="Yes, I want to respect user's network connection 😇" required checked
+                                value="true">
                             <label for="respectUser">Yes, I want to respect user's network connection 😇</label>
                         </div>
 
                         <div class="radioInput">
-                            <input type="radio" name="respectNetwork" id="dontRespect" class="inputForm" aria-label="Nah, who cares? 🥱" required value="false">
+                            <input type="radio" name="respectNetwork" id="dontRespect" class="inputForm"
+                                aria-label="Nah, who cares? 🥱" required value="false">
                             <label for="dontRespect">Nah, who cares? 🥱</label>
                         </div>
 
@@ -96,12 +114,14 @@
 
                     <div class="newInput">
                         <span>Enter the Assets 📦 to Pre-Cache</span>
-                        <span class="subResponse">Enter the absolute links to the assets you want to pre-cache (relative to the root of your site)</span>
+                        <span class="subResponse">Enter the absolute links to the assets you want to pre-cache (relative
+                            to the root of your site)</span>
 
                         <div class="valuesContainer precacheAssetsClass">
                             <span class="value">
                                 <input type="text" aria-label="Asset Link" placeholder="/assets/css/main.css">
-                                <img class="deleteIcon" src="/assets/images/delete.svg" height="40" width="40" alt="Delete Entry">
+                                <img class="deleteIcon" src="/assets/images/delete.svg" height="40" width="40"
+                                    alt="Delete Entry">
                             </span>
                         </div>
 
@@ -110,15 +130,17 @@
                             <span>Add New Entry</span>
                         </div>
                     </div>
-                    
+
                     <div class="newInput">
                         <span>Enter the Pages 📄 to Pre-Cache</span>
-                        <span class="subResponse">Enter the absolute links to the pages you want to pre-cache (relative to the root of your site)</span>
+                        <span class="subResponse">Enter the absolute links to the pages you want to pre-cache (relative
+                            to the root of your site)</span>
 
                         <div class="valuesContainer precachePagesClass">
                             <span class="value">
                                 <input type="text" aria-label="Asset Link" placeholder="/blog">
-                                <img class="deleteIcon" src="/assets/images/delete.svg" height="40" width="40" alt="Delete Entry">
+                                <img class="deleteIcon" src="/assets/images/delete.svg" height="40" width="40"
+                                    alt="Delete Entry">
                             </span>
                         </div>
 
@@ -129,8 +151,10 @@
                     </div>
 
                     <div class="navigationButtonsContainer">
-                        <button class="prevSection" id="firstPrevButton" type="button" aria-label="Previous Section">Back</button>
-                        <button class="nextSection" id="secondNextButton" type="button" aria-label="Next Section">Next</button>
+                        <button class="prevSection" id="firstPrevButton" type="button"
+                            aria-label="Previous Section">Back</button>
+                        <button class="nextSection" id="secondNextButton" type="button"
+                            aria-label="Next Section">Next</button>
                     </div>
                 </div>
             </div>
@@ -139,83 +163,96 @@
                 <div class="questionContainer">
                     <div class="newInput">
                         <span>Do you use any CDNs?</span>
-                        <span class="subResponse"> If so, do you want to cache them as well? If yes, add the links to the cdns.</span>
-                        <span class="subResponse"> Just enter the hostnames of the CDNs. For Eg: If it's jQueryV3.6.0 from Google, just `ajax.googleapis.com` is enough</span>
-    
+                        <span class="subResponse"> If so, do you want to cache them as well? If yes, add the links to
+                            the cdns.</span>
+                        <span class="subResponse"> Just enter the hostnames of the CDNs. For Eg: If it's jQueryV3.6.0
+                            from Google, just `ajax.googleapis.com` is enough</span>
+
                         <div class="valuesContainer getCDNClass">
                             <span class="value">
                                 <input type="text" aria-label="Asset Link" placeholder="cdn.jsdelivr.net">
-                                <img class="deleteIcon" src="/assets/images/delete.svg" height="40" width="40" alt="Delete Entry">
+                                <img class="deleteIcon" src="/assets/images/delete.svg" height="40" width="40"
+                                    alt="Delete Entry">
                             </span>
                         </div>
-    
+
                         <div class="addMoreValues">
                             <img src="/assets/images/add.svg" alt="Add New Entry" height="25" width="25">
                             <span>Add New Entry</span>
                         </div>
                     </div>
-                    
+
                     <div class="newInput">
                         <span>Do you use an Image Network like 8biticon or face.co?</span>
                         <span class="subResponse">If yes, add the links to the Image CDNS.</span>
-    
+
                         <div class="valuesContainer getImageCDNClass">
                             <span class="value">
                                 <input type="text" aria-label="Asset Link" placeholder="avatars.dicebear.com">
-                                <img class="deleteIcon" src="/assets/images/delete.svg" height="40" width="40" alt="Delete Entry">
+                                <img class="deleteIcon" src="/assets/images/delete.svg" height="40" width="40"
+                                    alt="Delete Entry">
                             </span>
                         </div>
-    
+
                         <div class="addMoreValues">
                             <img src="/assets/images/add.svg" alt="Add New Entry" height="25" width="25">
                             <span>Add New Entry</span>
                         </div>
 
-                        <br/>
-                        <span class="subResponse">Enter the link for a fallback Image. This image will be used if the service worker encounters troubles while fetching the real images</span>
-                        <input type="text" id="fallbackAvatar" class="inputForm" aria-label="Link to the Fallback Image" required placeholder="/assets/images/profile.png">
+                        <br />
+                        <span class="subResponse">Enter the link for a fallback Image. This image will be used if the
+                            service worker encounters troubles while fetching the real images</span>
+                        <input type="text" id="fallbackAvatar" class="inputForm" aria-label="Link to the Fallback Image"
+                            required placeholder="/assets/images/profile.png">
 
                     </div>
 
                     <div class="newInput">
-                        <span>Choose the Delivery Strategy of the Fetch Event: <br> Cache Only and Network Only stuff don't work good in my experience. So you get only 2 options. 😈</span>
+                        <span>Choose the Delivery Strategy of the Fetch Event: <br> Cache Only and Network Only stuff
+                            don't work good in my experience. So you get only 2 options. 😈</span>
                     </div>
 
 
                     <div class="newInput">
                         <span>Delivery Strategy of your web app files - local</span>
                         <div class="radioInput">
-                            <input type="radio" name="localDelivery" id="cacheFirstLocal" class="inputForm" aria-label="I have an offline.html page" required checked value="cacheFirst">
+                            <input type="radio" name="localDelivery" id="cacheFirstLocal" class="inputForm"
+                                aria-label="I have an offline.html page" required checked value="cacheFirst">
                             <label for="cacheFirstLocal">Cache First Falling back to Network Strategy 💪</label>
                         </div>
 
                         <div class="radioInput">
-                            <input type="radio" name="localDelivery" id="networkFirstLocal" class="inputForm" aria-label="I don't have an offline.html page" required value="networkFirst">
+                            <input type="radio" name="localDelivery" id="networkFirstLocal" class="inputForm"
+                                aria-label="I don't have an offline.html page" required value="networkFirst">
                             <label for="networkFirstLocal">Network First Falling back to Cache Strategy 🧠</label>
                         </div>
 
                     </div>
-                   
+
                     <div class="newInput">
                         <span>Delivery Strategy of your Image network and CDNs</span>
                         <div class="radioInput">
-                            <input type="radio" name="cdnDelivery" id="cacheFirstCDN" class="inputForm" aria-label="I have an offline.html page" required checked value="cacheFirst">
+                            <input type="radio" name="cdnDelivery" id="cacheFirstCDN" class="inputForm"
+                                aria-label="I have an offline.html page" required checked value="cacheFirst">
                             <label for="cacheFirstCDN">Cache First Falling back to Network Strategy 💪</label>
                         </div>
 
                         <div class="radioInput">
-                            <input type="radio" name="cdnDelivery" id="networkFirstCDN" class="inputForm" aria-label="I don't have an offline.html page" required value="networkFirst">
+                            <input type="radio" name="cdnDelivery" id="networkFirstCDN" class="inputForm"
+                                aria-label="I don't have an offline.html page" required value="networkFirst">
                             <label for="networkFirstCDN">Network First Falling back to Cache Strategy 🧠</label>
                         </div>
 
                     </div>
 
 
-                    
-    
+
+
                     <div class="navigationButtonsContainer">
-                        <button class="prevSection" id="secondPrevButton" type="button" aria-label="Previous Section">Back</button>
-                        <button class="nextSection" id="thirdNextButton" type="button" aria-label="Next Section">Next</button>
+                        <button class="prevSection" id="secondPrevButton" type="button"
+                            aria-label="Previous Section">Back</button>
+                        <button class="nextSection" id="thirdNextButton" type="button"
+                            aria-label="Next Section">Next</button>
                     </div>
                 </div>
 
@@ -225,55 +262,68 @@
                 <div class="questionContainer">
                     <div class="newInput">
                         <span>Do you plan to use these technologies?</span>
-                        
+
                         <div class="checkInput">
-                            <input type="checkbox" class="technology" name="technology" id="bgfetch" aria-label="Background Fetch">
+                            <input type="checkbox" class="technology" name="technology" id="bgfetch"
+                                aria-label="Background Fetch">
                             <label for="fetch">Background Fetch</label>
                         </div>
 
                         <div class="checkInput">
-                            <input type="checkbox" class="technology" name="technology" id="periodicsync" aria-label="Periodic Background Sync">
+                            <input type="checkbox" class="technology" name="technology" id="periodicsync"
+                                aria-label="Periodic Background Sync">
                             <label for="periodic">Periodic Background Sync</label>
                         </div>
 
                         <div class="checkInput">
-                            <input type="checkbox" class="technology" name="technology" id="webpush" aria-label="Push API">
+                            <input type="checkbox" class="technology" name="technology" id="webpush"
+                                aria-label="Push API">
                             <label for="push">Push API</label>
                         </div>
 
                         <div class="checkInput">
-                            <input type="checkbox" class="technology" name="technology" id="bgsync" aria-label="Background Sync">
+                            <input type="checkbox" class="technology" name="technology" id="bgsync"
+                                aria-label="Background Sync">
                             <label for="sync">Background Sync</label>
                         </div>
                     </div>
 
-                    
-    
+
+
                     <div class="navigationButtonsContainer">
-                        <button class="prevSection" id="thirdPrevButton" type="button" aria-label="Previous Section">Back</button>
-                        <button class="finishSection" id="finishButton" type="button" aria-label="Next Section">Finish</button>
+                        <button class="prevSection" id="thirdPrevButton" type="button"
+                            aria-label="Previous Section">Back</button>
+                        <button class="finishSection" id="finishButton" type="button"
+                            aria-label="Next Section">Finish</button>
                     </div>
                 </div>
 
             </div>
             <div class="fifthPanel">
-                <span class="panelTitle">Service Worker is ready to be installed 💻💠⚡</span>
+                <span class="panelTitle">Your Service Worker is ready to be installed 💻💠⚡</span>
                 <button type="button" class="downloadButton">
                     <img src="/assets/images/download.svg" alt="Download Service Worker" height="40" width="40">
                     <span>Download Service Worker</span>
                 </button>
                 <button type="button" class="downloadOffline">
                     <img src="/assets/images/download.svg" alt="Download Offline.html" height="40" width="40">
-                    <span>Download Offline.html</span>
+                    <span>Download offline.html</span>
                 </button>
 
                 <span class="resultSpan">Points to remember:</span>
-                <span class="resultSubSpan">&bull; Place the service worker in the root of your site and make sure offline.html also lives there.</span>
-                <span class="resultSubSpan">&bull; Add this to end of your &lt;body&gt; tag in your index.html file:</span>
+                <span class="resultSubSpan">&bull; Place the service worker in the root of your site and make sure
+                    offline.html also lives there.</span>
+                <span class="resultSubSpan">&bull; Add the below snippet to end of your &lt;body&gt; tag in your
+                    index.html file:</span>
                 <pre class="resultCode" id="codeSnippet"></pre>
-                <span class="resultSubSpan">&bull; Make sure the assets you want to cache are in the specified path. Failure to do so will result in a failed installation of the service worker.</span>
-                <span class="resultSubSpan">&bull; Background Sync, Periodic Background Sync, Background Fetch won't work unless the web app is installed as a Progressive Web App (PWA) and is served from an HTTPS server or from localhost.</span>
-                <span class="resultSubSpan">&bull; Thanks for Using this Service Worker Generator! 🖖 :-)</span>
+                <span class="resultSubSpan">&bull; Make sure the assets you want to cache are in the specified path.
+                    Failure to do so may/will result in a failed installation of the service worker.</span>
+                <span class="resultSubSpan">&bull; Background Sync, Periodic Background Sync, Background Fetch won't
+                    work unless the web app is installed as a Progressive Web App (PWA) and is served from an HTTPS
+                    server or from localhost. And also depends on the browser compatibility.</span>
+                <span class="resultSubSpan">&bull; Thanks for using! 🖖 :-) Star me on <a
+                        rel="noopener noreferrer" href="https://github.com/tharunoptimus/cool-sw"
+                        target="_blank">GitHub</a> if you like it!</span>
             </div>
         </div>
     </div>
@@ -282,8 +332,16 @@
     <script src="/assets/js/navigate.js"></script>
     <script defer>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/serviceworker.js');
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('serviceworker.js')
+                    .then((reg) => console.log('%cA Service Worker is installed Successfully and is ACTIVE for the scope:', 'color: #4cd137;', reg.scope))
+                    .catch((err) => {
+                        console.log('%cService Worker Installation FAILED. ', 'color: #f39c12; font-size: 1.5rem;')
+                        console.log('%cReason: ', 'color: #f39c12;', err)
+                    })
+            })
         }
     </script>
 </body>
+
 </html>
