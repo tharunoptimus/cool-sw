@@ -1,9 +1,19 @@
 const CACHE = "content-v2" 
-const OFFLINE = "/offline" 
+const OFFLINE = "./offline" 
 
 const AUTO_CACHE = [
 	OFFLINE,
-	"/",
+	"./",
+	"./assets/css/main.css",
+	"./assets/images/add.svg",
+	"./assets/images/delete.svg",
+	"./assets/images/download.svg",
+	"./assets/js/app.js",
+	"./assets/js/generator.js",
+	"./assets/js/navigate.js",
+	"./favicon.ico",
+	"./logo.png",
+	"./site.webmanifest",
 ]
 
 self.addEventListener("install", (event) => {
