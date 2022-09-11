@@ -53,11 +53,10 @@ self.addEventListener("fetch", (event) => {
 			return fetch(event.request)
 				.then((response) => {
 					caches.open(CACHE).then((cache) => {
-						cache.put(event.request, response.clone())
-						return response
+						cache.put(event.request, response)
 					})
-				})
-				.catch((err) => {
+					return response.clone()
+				}).catch(_ => {
 					return caches.open(CACHE).then((cache) => {
 						const offlineRequest = new Request(OFFLINE)
 						return cache.match(offlineRequest)
