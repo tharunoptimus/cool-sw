@@ -523,6 +523,7 @@ strong {
     text-align: left;
     word-spacing: normal;
     border-radius: 8px;
+    max-width: 85vw;
 }
 
 .resultCode::-webkit-scrollbar-thumb {
