@@ -411,11 +411,10 @@ function cacheFirstLocal() {
                     return response
                 }
 
-                return fetch(event.request).then((response) => {
-                    caches.open(CACHE).then((cache) => {
-                        cache.put(event.request, response.clone())
-                    })
-                    return response
+                return fetch(event.request).then(async (response) => {
+                    let cache = await caches.open(CACHE)
+					cache.put(event.request, response.clone())
+					return response
                 }).catch(err => {
                     return caches.open(CACHE).then((cache) => {
                         const offlineRequest = new Request(OFFLINE)
